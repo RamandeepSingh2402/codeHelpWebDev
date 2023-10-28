@@ -69,22 +69,107 @@
 
 // We can compare primitives with indexOf()
 // We can't compare objects with indexOf(
-let courses = [
-    {code: 1, name: 'Java'},
-    {code: 2, name: 'Python'}
-];
-console.log(courses);
+// let courses = [
+//     {code: 1, name: 'Java'},
+//     {code: 2, name: 'Python'}
+// ];
+// console.log(courses);
 
 // using callback function for searching objects
 
-let course = courses.find(function(course){
-    return course.name==='Java';
-})
+// let course = courses.find(function(course){
+//     return course.name==='Java';
+// })
 
-console.log(course);
+// console.log(course);
 
 // if the course is not present in the array, then it returns undefined
 
 // Arrow function
 
-let course2 = courses.find(course => course.name === 'Python');
+// let course2 = courses.find(course => course.name === 'Python');
+
+let numbers = [1, 2, 3, 4, 5, 6, 7];
+
+// to remove the last element of the array
+numbers.pop();
+console.log(numbers);
+
+// to remove the first element of the array
+numbers.shift();
+console.log(numbers);
+
+// to remove the elements from the middle of the array
+numbers.splice(2,1);
+console.log(numbers);
+
+// emptying an array
+// first method: not recommended numbers = [];
+
+// second method of emptying an array: making the length of the array equal to zero ~ empties all other variables referencing this array as well
+numbers.length = 0;
+console.log('Emptied array: ' + numbers);
+
+// third method of emptying an array ~ using splice and removing all the elements of the array
+numbers.splice(0,numbers.length);
+
+// combining an array
+let first = [1,2,3];
+let second = [4,5,6];
+let combined = first.concat(second);
+console.log(`Combined array: ` + combined);
+
+// slicing an array
+let sliced = combined.slice(2,3);
+console.log(sliced); 
+
+// using slice for the new array:
+let marks = [10, 20, 30, 40, 50, 60, 70, 80];
+console.log(marks.splice(2,6));
+
+// using splice by mentioning the starting index only makes it return the elements of the array after the starting point
+let updatedMarks = [10,20,30,40,50,60,70,80];
+console.log(updatedMarks.splice(2));
+
+// using just the splice method without initial index creates the copy of the original array
+console.log(updatedMarks.splice());
+
+// using spread operator to combine the arrays
+let firstArr = [1, 2, 3];
+let secondArr = [4, 5, 6];
+let combinedArr = [...firstArr, ...secondArr];
+console.log('The combined array after using the spread operator: ' + combinedArr);
+
+// creating a copy of an element using the spread operator
+let copiedArr = [...combinedArr];
+console.log(copiedArr);
+
+// using for-of loop and for-each loop to iterate an array
+let arr = [10, 20, 30, 40, 50];
+console.log('Iterating an array using for-of loop: ');
+for( let value of arr) {
+     console.log(value);
+}
+
+// for-each loop uses call-back functions: 
+console.log('Iterating an array using for-each loop: ');
+arr.forEach( number => console.log(number) );
+
+// using the join method to join the elements of the array
+let numArr = [10, 20, 30, 40, 50, 60];
+let joinedElements = numArr.join(', ');
+console.log(joinedElements);
+
+// splitting an array into multiple fragments on the basis of a particular thing
+let message = 'Can we please split this message?';
+let messageParts = message.split(' ');
+console.log('The splitted message is as following: ');
+console.log(messageParts);
+console.log("The changed message with underscores is as follows: ");
+console.log(messageParts.join('_'));
+
+// sorting the arrays:
+let unsortedArr = [60, 40, 50, 30, 20, 10];
+console.log("Unsorted array: " + unsortedArr);
+console.log("Sorted array (ascending order): " + unsortedArr.sort());
+console.log("Sorted array (descending order): " + unsortedArr.reverse());
