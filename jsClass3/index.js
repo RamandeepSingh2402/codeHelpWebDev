@@ -60,9 +60,8 @@
 // // if an element is not present in an array, indexOf(element) returns -1
 
 
-// // We wantto check if a number exists in an array
-// console.log(numbers.includes(1));
-
+// // We want to check if a number exists in an array
+// console.log(numbers.includes(1))
 // // looking for the index of a number with given searching index
 // // checks the index of 1 starting from 2nd index
 // console.log(numbers.indexOf(1, 2));
@@ -80,6 +79,10 @@
 // let course = courses.find(function(course){
 //     return course.name==='Java';
 // })
+
+// let course1 = courses.find((course) => course.name === 'Java');
+// console.log("The result from the call-back function is: ");
+// console.log(course1);
 
 // console.log(course);
 
@@ -158,7 +161,7 @@ arr.forEach( number => console.log(number) );
 // using the join method to join the elements of the array
 let numArr = [10, 20, 30, 40, 50, 60];
 let joinedElements = numArr.join(', ');
-console.log(joinedElements);
+console.log('The joined elements are: ' + joinedElements);
 
 // splitting an array into multiple fragments on the basis of a particular thing
 let message = 'Can we please split this message?';
@@ -173,3 +176,25 @@ let unsortedArr = [60, 40, 50, 30, 20, 10];
 console.log("Unsorted array: " + unsortedArr);
 console.log("Sorted array (ascending order): " + unsortedArr.sort());
 console.log("Sorted array (descending order): " + unsortedArr.reverse());
+
+// filtering the arrays:
+let numberedArr = [1, 2, 3, -1, -2, 4];
+let filtered = numberedArr.filter( value => (value >=0));
+console.log("Filtered array is: " + filtered);
+
+// Mapping arrays:
+// map() -> maps each element of array to something else 
+
+let numbersArr = [7, 8, 9, 10];
+let items = numbersArr.map(value =>  ('student_no ' + value));
+console.log("The mapped numbered array is: " + items);
+
+// Mapping with objects:
+let newNumArr = [1,2,-6,-9];
+
+// Chaining in JS -> on the newNumArr, we're using filter method and on that we're using map method
+let filteredNums = newNumArr
+                    .filter(value => value >=0)
+                    .map(num => {value: num});
+console.log("Mapping along the new items: ");
+console.log(newItems);
